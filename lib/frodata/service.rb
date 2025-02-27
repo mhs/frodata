@@ -243,7 +243,7 @@ module FrOData
       else # From a URL
         response = nil
         METADATA_TIMEOUTS.each do |timeout|
-          response = execute(metadata_url, timeout: timeout)
+          response = execute(metadata_url, timeout: timeout, format: :xml)
           break unless response.timed_out?
         end
         raise "Metadata Timeout" if response.timed_out?
