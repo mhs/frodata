@@ -34,7 +34,7 @@ module FrOData
       private
 
       def validate(value)
-        if value > max_value || value < min_value || value.precs.first > 29
+        if value > max_value || value < min_value || value.n_significant_digits > 29
           validation_error "Value is outside accepted range: #{min_value} to #{max_value}, or has more than 29 significant digits"
         end
       end
